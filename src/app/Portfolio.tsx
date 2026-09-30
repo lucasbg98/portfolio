@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useSyncExternalStore } from "react";
 import { content, links, type Lang } from "@/content";
+import profilePic from "./profile.jpeg";
 
 const STORAGE_KEY = "portfolio-lang";
 const CHANGE_EVENT = "portfolio-lang-change";
@@ -87,33 +89,48 @@ export default function Portfolio() {
 
       <main id="top" className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Hero */}
-        <section className="py-20 sm:py-28">
-          <p className="font-mono text-sm text-accent">{t.hero.greeting}</p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-fg sm:text-6xl">
-            Lucas Bragança Gonçalves
-          </h1>
-          <p className="mt-3 text-2xl font-semibold text-muted sm:text-3xl">{t.hero.title}</p>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{t.hero.tagline}</p>
-          <p className="mt-4 text-sm text-muted">{t.hero.location}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
-            >
-              {t.hero.cta}
-            </a>
-            <a
-              href="#contact"
-              className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-fg transition-colors hover:border-accent"
-            >
-              {t.hero.ctaSecondary}
-            </a>
-            <a href={links.github} target="_blank" rel="noreferrer" className="rounded-lg border border-line px-5 py-2.5 text-sm text-fg transition-colors hover:border-accent">
-              GitHub
-            </a>
-            <a href={links.linkedin} target="_blank" rel="noreferrer" className="rounded-lg border border-line px-5 py-2.5 text-sm text-fg transition-colors hover:border-accent">
-              LinkedIn
-            </a>
+        <section className="grid items-center gap-10 py-16 sm:py-24 md:grid-cols-[1fr_auto] md:gap-12">
+          <div className="relative mx-auto w-40 sm:w-48 md:order-last md:w-64 lg:w-72">
+            <div aria-hidden className="absolute -inset-6 rounded-full bg-accent/15 blur-3xl" />
+            <div className="relative rounded-full bg-linear-to-br from-accent via-accent/40 to-line p-1">
+              <Image
+                src={profilePic}
+                alt="Lucas Bragança Gonçalves"
+                placeholder="blur"
+                preload
+                sizes="(min-width: 1024px) 288px, (min-width: 768px) 256px, 192px"
+                className="aspect-square w-full rounded-full border-4 border-bg object-cover object-[50%_42%]"
+              />
+            </div>
+          </div>
+          <div>
+            <p className="font-mono text-sm text-accent">{t.hero.greeting}</p>
+            <h1 className="mt-3 text-4xl font-bold tracking-tight text-fg sm:text-5xl lg:text-6xl">
+              Lucas Bragança Gonçalves
+            </h1>
+            <p className="mt-3 text-2xl font-semibold text-muted sm:text-3xl">{t.hero.title}</p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{t.hero.tagline}</p>
+            <p className="mt-4 text-sm text-muted">{t.hero.location}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+              >
+                {t.hero.cta}
+              </a>
+              <a
+                href="#contact"
+                className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-fg transition-colors hover:border-accent"
+              >
+                {t.hero.ctaSecondary}
+              </a>
+              <a href={links.github} target="_blank" rel="noreferrer" className="rounded-lg border border-line px-5 py-2.5 text-sm text-fg transition-colors hover:border-accent">
+                GitHub
+              </a>
+              <a href={links.linkedin} target="_blank" rel="noreferrer" className="rounded-lg border border-line px-5 py-2.5 text-sm text-fg transition-colors hover:border-accent">
+                LinkedIn
+              </a>
+            </div>
           </div>
         </section>
 
