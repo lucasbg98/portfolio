@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lucasbragancadev.vercel.app"),
   title: "Lucas Bragança Gonçalves | Full Stack Developer",
   description:
     "Full stack developer (TypeScript, React, Next.js, Node.js/NestJS) building production products and LLM features. Projects: FireSafe, LLM features at Vend, English Lyrics.",
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     title: "Lucas Bragança Gonçalves | Full Stack Developer",
     description: "TypeScript, React, Next.js, Node.js/NestJS and applied AI. Open to remote roles.",
     type: "website",
+    url: "https://lucasbragancadev.vercel.app",
   },
 };
 

@@ -17,4 +17,4 @@ Open http://localhost:3000.
 
 ## Deploy
 
-Deployed on Vercel from the `main` branch.
+Live at **https://lucasbragancadev.vercel.app**, deployed on Vercel from the `main` branch.
